@@ -1,0 +1,10 @@
+version: '3.0'
+
+services:
+  DeployToCircleCI:
+    image: practice/deploy_to_circle_ci:1
+#    when updating an application, to automate the steps of first building its new image & compose:
+    build:
+      context: ..
+    ports:
+      - "8080:80"

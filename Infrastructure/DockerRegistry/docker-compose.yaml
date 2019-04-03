@@ -1,0 +1,13 @@
+version: '3.0'
+
+services:
+  deploy-to-circleci:
+    image: registry:latest
+    container_name: DeployCircleCIRegistry
+    volumes:
+      - registry:/var/lib/registry
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+volumes:
+  registry:
